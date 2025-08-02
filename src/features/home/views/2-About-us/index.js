@@ -18,7 +18,7 @@ export const AboutUs = () => {
           <div className="lg:col-span-5 lg:px-8">
             <div className="relative">
               <div className="absolute inset-0 border dark:border-gray-800 rounded-full -mt-[10px] -ms-3 h-[100%] w-[100%] -z-1"></div>
-              <Image
+              {/* <Image
                 src="/images/avatar.png"
                 alt=""
                 height={0}
@@ -26,7 +26,8 @@ export const AboutUs = () => {
                 sizes="100vw"
                 style={{ height: "auto", width: "100%" }}
                 className="rounded-full shadow-md shadow-gray-200 dark:shadow-gray-800"
-              />
+              /> */}
+              <img className="rounded-full shadow-md shadow-gray-200 dark:shadow-gray-800" src="/images/avatar.png"/>
               {/* <div className="absolute lg:bottom-20 md:bottom-10 bottom-6 ltr:lg:-right-16 rtl:lg:-left-16 ltr:md:-right-8 rtl:md:-left-8 ltr:right-0 rtl:left-0 p-4 rounded-lg shadow-md dark:shadow-gray-800 bg-white dark:bg-slate-900 m-3 w-44 text-center">
                 <h6 className="font-semibold">{t("web_developer")}</h6>
                 <span className="text-2xl font-medium text-amber-500 mb-0">
