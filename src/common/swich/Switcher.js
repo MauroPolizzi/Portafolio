@@ -94,11 +94,11 @@ export default function Switcher() {
             >
               <Unicons.UilGlobe
                 width={18}
-                className="text-[20px] text-yellow-500"
+                className="text-[20px] text-dark-purple"
               />
               <Unicons.UilGlobe
                 width={18}
-                className="text-[20px] text-yellow-500"
+                className="text-[20px] text-dark-purple"
               />
               <span className="ball bg-white dark:bg-slate-900 rounded-full absolute top-[2px] left-[2px] w-7 h-7"></span>
             </label>
@@ -113,7 +113,7 @@ export default function Switcher() {
         className={`${
           !scrollToTops
             ? "hidden"
-            : "back-to-top fixed  text-lg rounded-full z-10 bottom-5 right-5 h-9 w-9 text-center bg-amber-500 text-white leading-9 flex items-center justify-center"
+            : "back-to-top fixed  text-lg rounded-full z-10 bottom-5 right-5 h-9 w-9 text-center bg-dark-purple text-white leading-9 flex items-center justify-center"
         }`}
       >
         <Unicons.UilArrowUp width={18} />

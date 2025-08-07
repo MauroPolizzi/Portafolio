@@ -1547,7 +1547,7 @@ p{
 }
 .navbar .navigation .navbar-nav .nav-link.active{
   --tw-text-opacity: 1 !important;
-  color: rgb(245 158 11 / var(--tw-text-opacity)) !important;
+  color: rgb(113, 76, 157) !important;
 }
 :is(.dark .navbar .navigation .navbar-nav .nav-link.active){
   --tw-text-opacity: 1;
@@ -1867,7 +1867,7 @@ p{
   height: 100%;
   width: 100%;
   border-radius: 9999px;
-  background-color: rgb(245 158 11 / 0.6);
+  background-color: rgb(113, 76, 157);
   -webkit-animation: sk-bounce 2s infinite ease-in-out;
           animation: sk-bounce 2s infinite ease-in-out;
 }
@@ -1976,7 +1976,7 @@ html[dir=rtl] .tns-visually-hidden {
   height: 35rem;
   width: 90rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
+  background-color: rgb(113, 76, 157);
   --tw-content: "";
   content: var(--tw-content);
 }
@@ -3115,7 +3115,7 @@ ul li:first-child{
   height: 20px;
   position: absolute;
   border-radius: 50%;
-  background-color:#ffa80f;
+  background-color:#714c9d;
   left: 15%;
   transform-origin: 50%;
   animation: circle7124 .5s alternate infinite ease;

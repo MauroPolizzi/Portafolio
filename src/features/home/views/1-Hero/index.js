@@ -18,7 +18,7 @@ export const Hero = () => {
   return (
     <>
       <section
-        className="relative pt-28 personal-wrapper overflow-hidden bg-amber-500/5"
+        className="relative pt-28 personal-wrapper overflow-hidden"
         id="home"
       >
         <div className="absolute inset-0" id="overlay"></div>
@@ -32,14 +32,14 @@ export const Hero = () => {
                     // Same substring at the start will only be typed out once, initially
                     "Mauro Polizzi",
                     1000, // wait 1s before replacing "Mice" with "Hamsters"
-                    "Full Stack",
+                    "Full Stack Developer",
                     1000,
                     ".NET & Angular",
                     1000,
                   ]}
                   wrapper="span"
                   speed={50}
-                  className="typewrite text-amber-500"
+                  className="typewrite text-dark-purple"
                   repeat={Infinity}
                 />
                 <span
@@ -64,7 +64,7 @@ export const Hero = () => {
                     language === "es" ? "/pdfs/MauroPolizzi2025.pdf" : "/pdfs/MauroPolizziInglish2025.pdf"
                   }
                   target="_blank"
-                  className="btn bg-amber-500/10 hover:bg-amber-500 border-amber-500/10 hover:border-amber-500 text-amber-500 hover:text-white rounded-md ms-1"
+                  className="btn bg-amber-400/10 hover:bg-dark-purple border-dark-purple hover:border-dark-purple text-dark-purple hover:text-white rounded-md ms-1"
                 >
                   {t("download_cv")}
                 </Link>

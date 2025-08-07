@@ -95,7 +95,7 @@ export const AboutUs = () => {
                 className="flex group shadow cursor-pointer shadow-gray-200 dark:shadow-gray-800 dark:hover:shadow-gray-700 items-center p-3 rounded-lg bg-white dark:bg-slate-900 "
                 key={index}
               >
-                <div className="flex items-center justify-center h-[45px] min-w-[45px] -rotate-45 bg-amber-500/10 group-hover:bg-amber-500 text-amber-500 group-hover:text-white text-center rounded-xl me-5 transition-all duration-500">
+                <div className="flex items-center justify-center h-[45px] min-w-[45px] -rotate-45 group-hover:bg-dark-purple text-dark-purple group-hover:text-white text-center rounded-xl me-5 transition-all duration-500">
                   <div className="rotate-45">{item.Icon}</div>
                 </div>
                 <div className="flex-1">

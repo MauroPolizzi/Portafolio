@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="container text-center">
           <div className="grid lg:grid-cols-12 md:grid-cols-3 grid-cols-1 items-center">
             <div className="lg:col-span-3 md:text-start text-center">
-              <Link href="#" className="text-[18px] focus:outline-none">
+              <Link href="#" className="text-[18px] focus:outline-none hover:text-dark-purple hover:animate-bounce">
                 <span>{t("tanks_footer")}</span>
               </Link>
             </div>
@@ -28,7 +28,7 @@ const Footer = () => {
                 <Link
                   href="https://www.linkedin.com/in/mauropolizzideveloperfullstack/"
                   target="_blank"
-                  className="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"
+                  className="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-dark-purple dark:hover:border-dark-purple hover:bg-dark-purple dark:hover:bg-dark-purple"
                 >
                   <Unicons.UilLinkedin width={30} />
                   <i className="uil uil-linkedin" title="Linkedin"></i>
@@ -38,7 +38,7 @@ const Footer = () => {
                 {" "}
                 <Link
                   href="mailto:mauropolizzi2@gmail.com"
-                  className="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"
+                  className="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-dark-purple dark:hover:border-dark-purple hover:bg-dark-purple dark:hover:bg-dark-purple"
                 >
                   <Unicons.UilEnvelope width={30} />
                 </Link>
