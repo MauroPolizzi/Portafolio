@@ -16,6 +16,23 @@ const nextConfig = {
   basePath: BASE_PATH,
   // Se expone al navegador para poder prefijar rutas de public/ (ver src/common/asset).
   env: { NEXT_PUBLIC_BASE_PATH: BASE_PATH },
+
+  // En desarrollo, http://localhost:3000 da 404 porque el sitio vive en
+  // /Portafolio. Esta redirección evita tener que escribir la ruta a mano.
+  // Solo aplica a `next dev`: la build de producción no la incluye, porque
+  // un sitio estático no puede hacer redirecciones.
+  ...(process.env.NODE_ENV !== "production" && {
+    async redirects() {
+      return [
+        {
+          source: "/",
+          destination: BASE_PATH,
+          basePath: false,
+          permanent: false,
+        },
+      ];
+    },
+  }),
 };
 
 export default nextConfig;

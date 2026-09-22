@@ -18,12 +18,14 @@ npm install
 
 | Comando | Qué hace |
 | --- | --- |
-| `npm run dev` | Servidor de desarrollo en **http://localhost:3000/Portafolio** |
+| `npm run dev` | Servidor de desarrollo en **http://localhost:3000/Portafolio** (la raíz redirige sola) |
 | `npm run lint` | ESLint con las reglas de Next |
 | `npm run build` | Genera el sitio estático en `out/` |
 
 > La URL de desarrollo incluye `/Portafolio` porque el sitio vive en una subcarpeta
-> de github.io. Está configurado con `basePath` en [`next.config.mjs`](next.config.mjs).
+> de github.io (`basePath` en [`next.config.mjs`](next.config.mjs)). Next imprime en
+> la consola `http://localhost:3000` **sin** el prefijo: esa dirección redirige sola
+> a `/Portafolio`, así que se puede abrir cualquiera de las dos.
 
 ---
 
