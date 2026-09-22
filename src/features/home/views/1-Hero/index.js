@@ -64,8 +64,8 @@ export const Hero = () => {
                   width: "100%",
                   borderRadius: "50%",
                 }}
-                src="/images/profileimg.jpg"
-                alt="MauroPolizzi"
+                src={profileImg}
+                alt={profile.name}
               /> */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
