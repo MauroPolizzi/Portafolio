@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link as Link1 } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
 import CountUp from "react-countup";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+import profileImg from "@/assets/images/profileimg.JPG";
+import { profile } from "@/Data/profile";
+import { asset } from "@/common/asset";
+import { useContent } from "@/common/content";
 
 export const Hero = () => {
   const { t } = useTranslation();
+  const { lang } = useContent();
 
-  const [language, setLanguage] = useState("es");
-  useEffect(() => {
-    if (localStorage.getItem("language") !== language) {
-      setLanguage(localStorage.getItem("language"));
-    }
-  }, [language]);
   return (
     <>
       <section
@@ -28,28 +27,14 @@ export const Hero = () => {
               <h4 className="font-bold lg:text-[40px] text-3xl lg:leading-normal leading-normal mb-4">
                 {t("hi")} <br />
                 <TypeAnimation
-                  sequence={[
-                    // Same substring at the start will only be typed out once, initially
-                    "Mauro Polizzi",
-                    1000, // wait 1s before replacing "Mice" with "Hamsters"
-                    "Full Stack Developer",
-                    1000,
-                    ".NET & Angular",
-                    1000,
-                  ]}
+                  // Las frases salen de src/Data/profile.js. El 1000 es la pausa
+                  // en milisegundos entre una y la siguiente.
+                  sequence={profile.roles.flatMap((role) => [role, 1000])}
                   wrapper="span"
                   speed={50}
                   className="typewrite text-dark-purple"
                   repeat={Infinity}
                 />
-                <span
-                  className="typewrite text-amber-500"
-                  data-period="2000"
-                  data-type='[ "Dennis Scott", "Website Designer", "Web Developer", "UI/UX Designer" ]'
-                >
-                  {" "}
-                  <span className="wrap"></span>{" "}
-                </span>
               </h4>
               <p className="text-slate-400 max-w-xl">{t("hero_subtitle")}</p>
               <div className="flex mt-6" style={{gap:"1rem"}} >
@@ -59,15 +44,14 @@ export const Hero = () => {
                 >
                   {t("hire_me")}
                 </Link1> */}
-                <Link
-                  href={
-                    language === "es" ? "/pdfs/MauroPolizzi2025.pdf" : "/pdfs/MauroPolizziInglish2025.pdf"
-                  }
+                <a
+                  href={asset(profile.cv[lang])}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="btn bg-amber-400/10 hover:bg-dark-purple border-dark-purple hover:border-dark-purple text-dark-purple hover:text-white rounded-md ms-1"
                 >
                   {t("download_cv")}
-                </Link>
+                </a>
               </div>
             </div>
             <div className="relative">
@@ -80,10 +64,15 @@ export const Hero = () => {
                   width: "100%",
                   borderRadius: "50%",
                 }}
-                src="/images/profileimg.jpg"
-                alt="MauroPolizzi"
+                src={profileImg}
+                alt={profile.name}
               /> */}
-              <img className="rounded-full" src="../images/profileimg.jpg" alt="MauroPolizzi" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="rounded-full"
+                src={profileImg.src}
+                alt={profile.name}
+              />
               {/* <div className="absolute lg:bottom-20 md:bottom-10 bottom-2 ltr:md:-left-5 ltr:left-2 rtl:md:-right-5 rtl:right-2 p-4 rounded-lg shadow-md dark:shadow-gray-800 bg-white dark:bg-slate-900 m-3 w-44 text-center">
                 <span className="text-3xl font-medium mb-0">
                   <span className="counter-value font-bold" data-target="125">
