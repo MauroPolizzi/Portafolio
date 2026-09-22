@@ -34,26 +34,22 @@
   },
   "Experiences": {
     "title": "Work Experience",
-    "subtitle": "Explore My Professional Journey",
-    "educaria0": "Educaria offers tailored solutions for all types of educational institutions, including schools, preschools, vocational training centers, academies, business schools, universities, and libraries.",
-    "educaria1": "• I participated in the development and maintenance of educational platforms and internal software.",
-    "educaria2": "• I participated in the creation of an application for migrating new client data, optimizing time and reducing errors from the previous migration process.",
-    "educaria3": "• I implemented dynamic interfaces, improving the user experience.",
-    "educaria4": "• I designed and optimized databases, ensuring data integrity.",
-    "educaria5": "• I automated unit and integration tests, contributing to the development of a framework to reduce test development time.",
-    "educaria6": "• I managed code versions and participated in agile planning and estimation meetings.",
-    "educaria7": "• I also worked on continuous deployment and integration, ensuring efficient processes in collaborative environments.",
-    "freelance0": "Management Systems.",
-    "freelance1": "• Management system for a medical office. I worked as part of a team to develop a web-based system for managing a medical office, enabling efficient management of doctors, patients, and appointments. I implemented features for scheduling and managing medical appointments, optimizing organization and improving the user experience.",
-    "freelance2": "• Management system for a restaurant. I worked as part of a team to develop an application for the comprehensive management of a restaurant, improving inventory control, employee management, customer management, on-site sales, and ordering."
-},
-
-"Message": "Message",
-"Name": "Name",
-"Email": "Email",
-"Subject":"Subject",
-"SendMessage": "Send",
-"Send": "Send",
-"Phone": "Phone",
-"Location": "Location"
+    "subtitle": "Explore My Professional Journey"
+  },
+  "Message": "Message",
+  "Name": "Name",
+  "Email": "Email",
+  "Subject": "Subject",
+  "SendMessage": "Send",
+  "Send": "Send",
+  "Phone": "Phone",
+  "Location": "Location",
+  "duration": {
+    "year": "year",
+    "years": "years",
+    "month": "month",
+    "months": "months",
+    "and": "and",
+    "present": "Present"
+  }
 }

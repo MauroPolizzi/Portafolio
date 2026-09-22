@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { expertiseData } from "../../../../Data/data";
+import avatarImg from "@/assets/images/avatar.png";
+import { profile } from "@/Data/profile";
 import CountUp from "react-countup";
 import { useTranslation } from "react-i18next";
 import ReactIcon from "./components/React-icon";
@@ -27,7 +29,12 @@ export const AboutUs = () => {
                 style={{ height: "auto", width: "100%" }}
                 className="rounded-full shadow-md shadow-gray-200 dark:shadow-gray-800"
               /> */}
-              <img className="rounded-full shadow-md shadow-gray-200 dark:shadow-gray-800" src="/images/avatar.png"/>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="rounded-full shadow-md shadow-gray-200 dark:shadow-gray-800"
+                src={avatarImg.src}
+                alt={profile.name}
+              />
               {/* <div className="absolute lg:bottom-20 md:bottom-10 bottom-6 ltr:lg:-right-16 rtl:lg:-left-16 ltr:md:-right-8 rtl:md:-left-8 ltr:right-0 rtl:left-0 p-4 rounded-lg shadow-md dark:shadow-gray-800 bg-white dark:bg-slate-900 m-3 w-44 text-center">
                 <h6 className="font-semibold">{t("web_developer")}</h6>
                 <span className="text-2xl font-medium text-amber-500 mb-0">

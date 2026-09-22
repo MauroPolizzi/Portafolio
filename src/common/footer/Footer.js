@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import * as Unicons from "@iconscout/react-unicons";
 import { useTranslation } from "react-i18next";
+import { profile } from "@/Data/profile";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -19,14 +20,14 @@ const Footer = () => {
             </div>
             <div className="lg:col-span-6 text-center mt-6 md:mt-0">
               <p className="mb-0">
-                © {new Date().getFullYear()} Mauro Polizzi
+                © {new Date().getFullYear()} {profile.name}
               </p>
             </div>
             <ul className="lg:col-span-3 list-none md:text-end text-center mt-6 md:mt-0">
               <li className="inline">
                 {" "}
                 <Link
-                  href="https://www.linkedin.com/in/mauropolizzideveloperfullstack/"
+                  href={profile.linkedin}
                   target="_blank"
                   className="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-dark-purple dark:hover:border-dark-purple hover:bg-dark-purple dark:hover:bg-dark-purple"
                 >
@@ -37,7 +38,7 @@ const Footer = () => {
               <li className="inline">
                 {" "}
                 <Link
-                  href="mailto:mauropolizzi2@gmail.com"
+                  href={`mailto:${profile.email}`}
                   className="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-dark-purple dark:hover:border-dark-purple hover:bg-dark-purple dark:hover:bg-dark-purple"
                 >
                   <Unicons.UilEnvelope width={30} />
