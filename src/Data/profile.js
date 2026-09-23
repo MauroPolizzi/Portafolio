@@ -6,7 +6,7 @@ export const profile = {
   name: "Mauro Polizzi",
 
   // Frases del efecto de tipeo del inicio, en el orden en que aparecen.
-  roles: ["Mauro Polizzi", "Full Stack Developer", ".NET & Angular"],
+  roles: ["Mauro Polizzi", "Backend Developer .NET"],
 
   email: "mauropolizzi2@gmail.com",
   linkedin: "https://www.linkedin.com/in/mauropolizzideveloperfullstack/",
