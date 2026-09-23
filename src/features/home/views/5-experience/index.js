@@ -6,12 +6,13 @@ import { experience } from "@/Data/experience";
 import { useContent } from "@/common/content";
 
 // Las fechas se leen en UTC para que la zona horaria no corra el mes.
+// Se cuenta el mes de inicio y el de fin, igual que LinkedIn: septiembre de 2021
+// a marzo de 2025 son 3 años y 7 meses, no 3 y 6.
 const monthsBetween = (start, end) => {
   let months = (end.getUTCFullYear() - start.getUTCFullYear()) * 12;
   months -= start.getUTCMonth();
   months += end.getUTCMonth();
-  if (end.getUTCDate() < start.getUTCDate()) months--;
-  return months;
+  return months + 1;
 };
 
 const formatDuration = (months, t) => {
@@ -31,9 +32,20 @@ const formatDuration = (months, t) => {
   return `${yearsLabel} ${t("duration.and")} ${monthsLabel}`;
 };
 
+// Iniciales para las empresas que todavía no tienen logo.
+const initialsOf = (company) =>
+  company
+    .split(/\s+/)
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
 // Clases de cada hito de la línea de tiempo (el punto y el círculo punteado).
 const timelineItemClasses =
   "ms-8 md:ms-0 relative after:content-[''] after:absolute after:top-[9px] after:rounded-full after:z-10 after:w-2.5 after:h-2.5 after:bg-dark-purple md:after:mx-auto ltr:md:after:right-0 ltr:md:after:left-0 rtl:md:after:left-0 rtl:md:after:right-0 ltr:after:-left-9 rtl:after:-right-9 before:content-[''] before:absolute md:before:mx-auto ltr:md:before:right-0 ltr:md:before:left-0 ltr:before:-left-11 rtl:md:before:left-0 rtl:md:before:right-0 rtl:before:-right-11 before:rounded-full before:z-10 before:border-2 before:border-dashed before:border-gray-200 dark:before:border-gray-700 before:top-0 before:w-7 before:h-7 before:bg-white dark:before:bg-slate-900";
+
+const bulletClasses = "mt-3 mb-0 text-slate-400 text-[15px]";
 
 export const Experience = () => {
   const { t } = useTranslation();
@@ -70,19 +82,35 @@ export const Experience = () => {
 
               const heading = (
                 <>
-                  <Image
-                    src={item.logo}
-                    alt={item.company}
-                    width={36}
-                    height={36}
-                    className={`rounded-full h-9 w-9 ${
-                      isLeft ? "md:ms-auto" : "md:me-auto"
-                    }`}
-                  />
+                  {item.logo ? (
+                    <Image
+                      src={item.logo}
+                      alt={item.company}
+                      width={36}
+                      height={36}
+                      className={`rounded-full h-9 w-9 ${
+                        isLeft ? "md:ms-auto" : "md:me-auto"
+                      }`}
+                    />
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className={`rounded-full h-9 w-9 flex items-center justify-center bg-dark-purple/10 dark:bg-white/10 text-dark-purple dark:text-white text-xs font-semibold ${
+                        isLeft ? "md:ms-auto" : "md:me-auto"
+                      }`}
+                    >
+                      {initialsOf(item.company)}
+                    </div>
+                  )}
                   <h5 className="my-2 font-semibold text-lg">{item.company}</h5>
                   <h6 className="text-sm mb-0">
                     {years}({duration})
                   </h6>
+                  {item.location && (
+                    <h6 className="text-sm mb-0 text-slate-400">
+                      {tx(item.location)}
+                    </h6>
+                  )}
                 </>
               );
 
@@ -110,17 +138,49 @@ export const Experience = () => {
                       }
                     >
                       <h5 className="title mb-1 font-semibold">{tx(item.role)}</h5>
-                      <p className="mt-3 mb-0 text-slate-400 text-[15px]">
-                        {tx(item.summary)}
-                      </p>
+                      <p className={bulletClasses}>{tx(item.summary)}</p>
+
+                      {/* Equipos o etapas dentro de la misma empresa. */}
+                      {item.groups?.map((group, groupIndex) => (
+                        <div key={groupIndex} className="mt-5">
+                          <h6 className="mb-0 font-semibold text-[15px]">
+                            {tx(group.label)}
+                          </h6>
+                          {group.highlights?.map((highlight, highlightIndex) => (
+                            <p key={highlightIndex} className={bulletClasses}>
+                              • {tx(highlight)}
+                            </p>
+                          ))}
+                        </div>
+                      ))}
+
                       {item.highlights?.map((highlight, highlightIndex) => (
-                        <p
-                          key={highlightIndex}
-                          className="mt-3 mb-0 text-slate-400 text-[15px]"
-                        >
+                        <p key={highlightIndex} className={bulletClasses}>
                           • {tx(highlight)}
                         </p>
                       ))}
+
+                      {item.techStack?.length > 0 && (
+                        <div className="mt-5">
+                          <h6 className="mb-0 font-semibold text-[15px]">
+                            {t("Experiences.techStack")}
+                          </h6>
+                          <ul
+                            className={`mt-3 flex flex-wrap gap-2 ${
+                              isLeft ? "" : "md:justify-end"
+                            }`}
+                          >
+                            {item.techStack.map((tech) => (
+                              <li
+                                key={tech}
+                                className="rounded-full bg-gray-100 dark:bg-slate-900 text-slate-400 text-xs px-3 py-1"
+                              >
+                                {tech}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

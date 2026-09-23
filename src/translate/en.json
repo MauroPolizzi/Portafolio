@@ -34,7 +34,8 @@
   },
   "Experiences": {
     "title": "Work Experience",
-    "subtitle": "Explore My Professional Journey"
+    "subtitle": "Explore My Professional Journey",
+    "techStack": "Tech stack"
   },
   "Message": "Message",
   "Name": "Name",
