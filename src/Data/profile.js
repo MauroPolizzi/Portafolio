@@ -14,7 +14,7 @@ export const profile = {
   // Los PDFs viven en public/pdfs/. Si se reemplaza el archivo manteniendo el
   // nombre no hay que tocar nada acá.
   cv: {
-    es: "/pdfs/MauroPolizzi2025.pdf",
-    en: "/pdfs/MauroPolizziInglish2025.pdf",
+    es: "/pdfs/cv-mauro-polizzi.pdf",
+    en: "/pdfs/cv-mauro-polizzi.pdf",
   },
 };
